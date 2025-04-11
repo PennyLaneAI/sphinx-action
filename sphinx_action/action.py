@@ -152,6 +152,8 @@ def build_all_docs(github_env, docs_directories):
         return_code, annotations = build_docs(github_env.build_command, docs_dir)
         if return_code != 0:
             build_success = False
+            print("Build failed with return code {}".format(return_code))
+            print("Build annotations: " + str(annotations))
 
         warnings += len(annotations)
 
