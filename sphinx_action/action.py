@@ -107,7 +107,7 @@ def build_docs(build_command, docs_directory):
     if os.path.exists(log_file):
         os.unlink(log_file)
 
-    sphinx_options = '--no-color -w "{}"'.format(log_file)
+    sphinx_options = '--keep-going --no-color -w "{}"'.format(log_file)
     # If we're using make, pass the options as part of the SPHINXOPTS
     # environment variable, otherwise pass them straight into the command.
     build_command = shlex.split(build_command)
@@ -153,7 +153,6 @@ def build_all_docs(github_env, docs_directories):
         if return_code != 0:
             build_success = False
             print("Build failed with return code {}".format(return_code))
-            print("Build annotations: " + str(annotations))
 
         warnings += len(annotations)
 
