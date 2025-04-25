@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=${{ inputs.python-version }}
+# ARG PYTHON_VERSION=3.9
 FROM python:${PYTHON_VERSION}-slim
 
 LABEL "maintainer"="Ammar Askar <ammar@ammaraskar.com>"
