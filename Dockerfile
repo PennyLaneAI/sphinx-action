@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:${PYTHON_VERSION}-slim
 
 LABEL "maintainer"="Ammar Askar <ammar@ammaraskar.com>"
 
@@ -10,5 +10,6 @@ RUN pip install -r requirements.txt
 
 ADD entrypoint.py /entrypoint.py
 ADD sphinx_action /sphinx_action
+ENV SPHINX_APIDOC_OPTIONS="members,show-inheritance"
 
 ENTRYPOINT ["/entrypoint.py"]

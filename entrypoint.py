@@ -8,7 +8,7 @@ from sphinx_action import action
 # in isolation.
 if __name__ == "__main__":
     print("[sphinx-action] Starting sphinx-action build.")
-    os.environ["SPHINX_APIDOC_OPTIONS"] = "members,show-inheritance"
+
     if "INPUT_PRE-BUILD-COMMAND" in os.environ:
         pre_command = os.environ["INPUT_PRE-BUILD-COMMAND"]
         print("Running: {}".format(pre_command))

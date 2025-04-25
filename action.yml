@@ -21,6 +21,11 @@ inputs:
       dependencies, for example with
       "apt-get update -y && apt-get install -y perl"
     required: false
+  python-version:
+    description:
+      The version of Python to use.
+    required: false
+    default: "3.10"
 runs:
   using: 'docker'
   image: 'Dockerfile'
