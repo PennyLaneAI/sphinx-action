@@ -27,10 +27,19 @@ inputs:
     required: false
     default: "3.10"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - PYTHON_VERSION=${{ inputs.python-version }}
+  using: 'composite'
+  steps:
+    - name: Update Dockerfile with Python version
+      shell: bash
+      run: |
+        sed -i "s/{INPUT_PYTHON_VERSION}/${{ inputs.python-version }}/g" Dockerfile
+    - name: Build and run Docker container
+      using: 'docker'
+      image: 'Dockerfile'
+  # using: 'docker'
+  # image: 'Dockerfile'
+  # args:
+  #   - PYTHON_VERSION=${{ inputs.python-version }}
   # using: 'docker'
   # image: 'Dockerfile'
   # args:

@@ -1,5 +1,4 @@
-ARG PYTHON_VERSION="${INPUT_PYTHON-VERSION}"
-FROM python:${INPUT_PYTHON_VERSION}-slim
+FROM python:{INPUT_PYTHON_VERSION}-slim
 
 LABEL "maintainer"="Ammar Askar <ammar@ammaraskar.com>"
 
