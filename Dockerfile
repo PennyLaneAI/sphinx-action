@@ -1,4 +1,5 @@
-ARG PYTHON_VERSION=${INPUT_PYTHON_VERSION}
+ARG PYTHON_VERSION=${INPUT_PYTHON-VERSION}
+RUN echo "Using Python version: ${PYTHON_VERSION}"
 FROM python:${PYTHON_VERSION}-slim
 
 LABEL "maintainer"="Ammar Askar <ammar@ammaraskar.com>"
