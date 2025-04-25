@@ -30,4 +30,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.python-version }}
+    - PYTHON_VERSION=${{ inputs.python-version }}
+  # using: 'docker'
+  # image: 'Dockerfile'
+  # args:
+  #   - ${{ inputs.python-version }}
