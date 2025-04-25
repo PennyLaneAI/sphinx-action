@@ -1,5 +1,5 @@
-ARG INPUT_PYTHON-VERSION=3.9
-FROM python:${INPUT_PYTHON-VERSION}-slim
+ARG PYTHON_VERSION=3.9
+FROM python:${PYTHON_VERSION}-slim
 
 LABEL "maintainer"="Ammar Askar <ammar@ammaraskar.com>"
 
